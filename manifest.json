@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "Bulk Unlink Manager",
+  "version": "1.0",
+  "description": "Opens a manager tab with one big button that unlinks the BOOKING site row in EVERY open hotel tab. Code is injected into tabs on click - tabs do NOT need to be reloaded.",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bulk-unlink-manager@anshuman.local"
+    }
+  },
+  "permissions": ["tabs", "*://live.ql2.com/*"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://live.ql2.com/sys/hotel/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

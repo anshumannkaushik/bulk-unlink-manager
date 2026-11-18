@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bulk Unlink Manager</title>
+<style>
+  body { font-family: tahoma, verdana, sans-serif; margin: 24px; color: #222; }
+  h1 { font-size: 20px; margin: 0 0 4px; }
+  #count { font-size: 14px; color: #555; margin-bottom: 14px; }
+  #go { background: #c0392b; color: #fff; font-weight: bold; font-size: 16px;
+    border: 2px solid #7b241c; border-radius: 8px; padding: 14px 22px; cursor: pointer; }
+  #go:disabled { opacity: .55; cursor: default; }
+  #summary { margin-top: 14px; font-size: 14px; font-weight: bold; }
+  #log { margin-top: 10px; font-size: 12px; line-height: 1.5; }
+  .ok { color: #1e8449; }
+  .bad { color: #c0392b; }
+  .note { margin-top: 14px; font-size: 12px; color: #666; max-width: 640px; }
+</style>
+</head>
+<body>
+<h1>Bulk Unlink Manager</h1>
+<div id="count">Counting open hotel tabs...</div>
+<button id="go">Unlink ALL open hotel tabs</button>
+<div id="summary"></div>
+<div id="log"></div>
+<div class="note">
+For every open hotel tab this injects the unlink directly into the page:
+it ticks the site-row checkbox, switches off the "Are you sure you want to
+unmap" confirm on the New ID / Unlink button, and clicks it. Tabs do NOT need
+to be reloaded first. Keep the tabs open while it runs - about 5 tabs/second.
+</div>
+<script src="manager.js"></script>
+</body>
+</html>
